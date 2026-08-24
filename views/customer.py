@@ -33,7 +33,6 @@ def render_page():
             lon = st.number_input("Your Longitude", value=customer.lon or 77.2090, format="%.4f")
             
         address = st.text_input("Address", value=customer.address or "")
-        urgency = st.selectbox("Urgency", [u.value for u in UrgencyLevel])
         
         if selected_service and st.button("Find Workers"):
             st.session_state['search_results'] = {
@@ -41,7 +40,7 @@ def render_page():
                 'lat': lat,
                 'lon': lon,
                 'address': address,
-                'urgency': urgency
+                'urgency': UrgencyLevel.NORMAL.value
             }
             
         if 'search_results' in st.session_state:
