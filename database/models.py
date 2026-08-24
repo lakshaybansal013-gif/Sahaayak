@@ -12,7 +12,6 @@ class UserRole(enum.Enum):
 
 class UrgencyLevel(enum.Enum):
     NORMAL = "Normal"
-    URGENT = "Urgent"
     EMERGENCY = "Emergency"
 
 class BookingStatus(enum.Enum):

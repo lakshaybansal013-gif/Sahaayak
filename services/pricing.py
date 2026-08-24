@@ -6,16 +6,14 @@ def calculate_price(service_base_price, distance_km, worker_experience_years, ur
     Base service price
     + Travel allowance (₹10 per km)
     + Skill/experience adjustment (₹10 per year)
-    + Emergency premium (₹100 for urgent, ₹250 for emergency)
+    + Emergency premium (₹250 for emergency)
     """
     
     travel_allowance = distance_km * 10
     skill_adjustment = worker_experience_years * 10
     
     emergency_premium = 0
-    if urgency_level == UrgencyLevel.URGENT.value:
-        emergency_premium = 100
-    elif urgency_level == UrgencyLevel.EMERGENCY.value:
+    if urgency_level == UrgencyLevel.EMERGENCY.value:
         emergency_premium = 250
         
     total_amount = service_base_price + travel_allowance + skill_adjustment + emergency_premium

@@ -153,7 +153,7 @@ def seed_data():
             address=customer.address,
             lat=customer.lat,
             lon=customer.lon,
-            urgency=random.choice([UrgencyLevel.NORMAL.value, UrgencyLevel.URGENT.value, UrgencyLevel.EMERGENCY.value]),
+            urgency=random.choice([UrgencyLevel.NORMAL.value, UrgencyLevel.EMERGENCY.value]),
             status=status,
             created_at=datetime.utcnow() - timedelta(days=random.randint(1, 10)),
             base_price=service.base_price,
